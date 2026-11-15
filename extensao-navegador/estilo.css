@@ -1,0 +1,59 @@
+/* Paleta do Ultron (interface/design.py). */
+:root {
+  --fundo: #050507; --superficie: #111216; --metal: #24262C; --acento: #C8102E; --energia: #FF243F;
+  --texto: #E6E8EC; --apagado: #858B96; --ok: #A4CBB5;
+  --mono: 'FiraCode Nerd Font', 'Fira Code', ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--fundo); color: var(--texto); font: 13px/1.5 system-ui, 'Inter', sans-serif;
+  display: flex; flex-direction: column;
+}
+header {
+  display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+  border-bottom: 1px solid var(--metal); background: var(--superficie);
+}
+header img { width: 20px; height: 20px; }
+.marca { font: 600 12px var(--mono); letter-spacing: .18em; flex: 1; }
+.marca span { color: var(--apagado); letter-spacing: .05em; font-weight: 400; }
+.estado { color: var(--acento); font-size: 12px; }
+.estado.on { color: var(--ok); }
+.aviso { margin: 10px 14px 0; padding: 8px 10px; border: 1px solid #5a1d28; background: #1a0b10; border-radius: 4px; font-size: 12px; }
+.aviso a { color: var(--energia); }
+main { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.vazio { color: var(--apagado); font-size: 12px; margin: auto 8px; text-align: center; }
+.msg { max-width: 92%; padding: 8px 11px; border-radius: 6px; white-space: pre-wrap; word-wrap: break-word; }
+.msg.eu { align-self: flex-end; background: #30121B; border: 1px solid #51202D; }
+.msg.ultron { align-self: flex-start; background: var(--superficie); border: 1px solid var(--metal); }
+.msg.progresso { align-self: flex-start; color: var(--apagado); font: 11px var(--mono); padding: 2px 4px; }
+.msg.pensando::after { content: '▍'; color: var(--energia); animation: piscar 1s steps(2) infinite; }
+@keyframes piscar { 50% { opacity: 0; } }
+.confirmar { align-self: stretch; border: 1px solid var(--acento); background: #160a0e; border-radius: 6px; padding: 10px; }
+.confirmar p { margin: 0 0 8px; }
+.confirmar .nivel { font: 10px var(--mono); color: var(--energia); letter-spacing: .1em; }
+.botoes { display: flex; gap: 6px; flex-wrap: wrap; }
+button {
+  background: var(--superficie); color: var(--texto); border: 1px solid var(--metal); border-radius: 4px;
+  padding: 6px 12px; font: 11px var(--mono); cursor: pointer;
+}
+button:hover { border-color: #626873; background: #1B1D23; }
+button.sim { color: var(--ok); }
+button.nao { color: #FF7787; }
+button:disabled { opacity: .45; cursor: default; }
+input, textarea {
+  background: #0B0C10; color: var(--texto); border: 1px solid var(--metal); border-radius: 4px; padding: 8px 9px;
+  font: inherit;
+}
+input:focus, textarea:focus { outline: none; border-color: #8A3445; }
+form { display: flex; gap: 8px; padding: 10px 14px 14px; border-top: 1px solid var(--metal); background: var(--superficie); }
+form textarea { flex: 1; resize: none; max-height: 140px; }
+#enviar { background: var(--acento); border-color: var(--acento); font-size: 15px; padding: 0 14px; }
+#enviar:hover { background: #E01A37; }
+/* opções */
+.opcoes { max-width: 520px; margin: 40px auto; padding: 0 16px; }
+.opcoes h1 { font: 600 15px var(--mono); letter-spacing: .15em; }
+.opcoes label { display: block; margin: 16px 0 6px; color: var(--apagado); font-size: 12px; }
+.opcoes input { width: 100%; }
+.opcoes code { font-family: var(--mono); background: var(--superficie); padding: 1px 5px; border-radius: 3px; }
+.opcoes .linha { display: flex; gap: 8px; align-items: center; margin-top: 18px; }

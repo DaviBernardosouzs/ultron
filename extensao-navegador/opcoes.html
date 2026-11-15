@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ultron in Chrome — opções</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="opcoes">
+  <h1>ULTRON IN CHROME</h1>
+  <p>A extensão conversa com a ponte local do Ultron (<code>ultron-navegador.service</code>). Cole o token de
+    <code>~/ultron/dados/navegador.token</code>.</p>
+  <label for="token">Token</label>
+  <input id="token" type="password" autocomplete="off">
+  <label for="porta">Porta da ponte</label>
+  <input id="porta" type="number" min="1" max="65535">
+  <div class="linha">
+    <button id="salvar" class="sim">Salvar</button>
+    <span id="status"></span>
+  </div>
+</div>
+<script src="opcoes.js"></script>
+</body>
+</html>
