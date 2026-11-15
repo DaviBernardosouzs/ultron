@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=Ultron
+Comment=Assistente de voz da rede local
+Exec=konsole --profile Ultron -e env ULTRON_MENU=1 /home/davi/ultron/ultron
+Icon=/home/davi/ultron/icone.png
+Terminal=false
+Categories=Utility;
+Keywords=assistente;voz;rede;ia;
+Actions=janela;texto;
+
+[Desktop Action texto]
+Name=Ultron (modo texto)
+Exec=konsole --profile Ultron -e env ULTRON_MENU=1 /home/davi/ultron/ultron --texto
+
+[Desktop Action janela]
+Name=Ultron (janela)
+Exec=/home/davi/ultron/ultron janela

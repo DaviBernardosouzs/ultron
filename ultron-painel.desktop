@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Ultron Painel
+GenericName=Painel do Ultron
+Comment=Interface visual do Ultron: conversa, voz, máquinas, modos e mídia
+Exec=/home/davi/ultron/ultron janela
+Icon=/home/davi/ultron/icone.png
+Terminal=false
+StartupNotify=true
+StartupWMClass=ultron-painel
+Categories=Utility;
+Keywords=ultron;assistente;voz;painel;ia;
