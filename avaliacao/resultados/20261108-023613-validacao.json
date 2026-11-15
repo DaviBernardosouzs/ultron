@@ -1,0 +1,34 @@
+{
+ "quando": "2026-11-08T02:36:12",
+ "casos": 25,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 10984,
+   "ferramentas_medio": 127
+  },
+  "selecao": {
+   "inclusao": 0.933,
+   "mrr": 0.762,
+   "tokens_medio": 943,
+   "ferramentas_medio": 10,
+   "ms_medio": 1.7,
+   "falhas": [
+    "o que eu decidi sobre o banco do CRM?"
+   ]
+  },
+  "segundos": 0.17
+ },
+ "intencao": {
+  "acuracia": 0.9,
+  "erros": [
+   {
+    "pedido": "compara a fundo os principais frameworks de agentes de IA",
+    "esperado": "pesquisa",
+    "obtido": "ferramenta"
+   }
+  ],
+  "segundos": 0.0
+ }
+}

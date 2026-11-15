@@ -1,0 +1,32 @@
+{
+ "_nota": "Conjunto SEPARADO: escrito depois das regras e não usado para ajustá-las. Rode com --validacao.",
+ "ferramentas": [
+  {"pedido": "vai chover amanhã em São Paulo?", "aceitas": ["clima"]},
+  {"pedido": "avisa minha irmã pelo telegram que chego tarde", "aceitas": ["mandar_mensagem_celular", "notificar"]},
+  {"pedido": "desliga o pc de mesa", "aceitas": ["desligar_computador"]},
+  {"pedido": "qual meu ip público?", "aceitas": ["info_rede"]},
+  {"pedido": "coloca um lofi pra tocar", "aceitas": ["midia", "abrir_site", "ativar_modo"]},
+  {"pedido": "marca dentista quinta às 15h", "aceitas": ["criar_evento"]},
+  {"pedido": "lê meus e-mails novos", "aceitas": ["ler_emails"]},
+  {"pedido": "o desktop está ligado?", "aceitas": ["status_computador", "listar_computadores", "recursos_maquinas"]},
+  {"pedido": "converte esse vídeo grande usando a máquina potente", "aceitas": ["enviar_tarefa_desktop"]},
+  {"pedido": "o que eu decidi sobre o banco do CRM?", "aceitas": ["decisoes_recentes", "buscar_memoria"]},
+  {"pedido": "gera o changelog do repositório do painel", "aceitas": ["gerar_changelog"]},
+  {"pedido": "roda uma auditoria no sistema", "aceitas": ["auditar_ultron", "diagnostico_ultron"]},
+  {"pedido": "abre o vscode no notebook", "aceitas": ["abrir_programa", "abrir_no_computador"]},
+  {"pedido": "quais portas estão abertas no roteador?", "aceitas": ["portas_abertas"]},
+  {"pedido": "entra no workspace de desenvolvimento", "aceitas": ["ativar_workspace"]}
+ ],
+ "intencao": [
+  {"pedido": "e aí, beleza?", "classe": "conversa"},
+  {"pedido": "o que é um buraco negro?", "classe": "factual"},
+  {"pedido": "como funciona o DNS?", "classe": "factual"},
+  {"pedido": "você lembra o nome da minha irmã?", "classe": "memoria"},
+  {"pedido": "liga a luz do quarto", "classe": "ferramenta"},
+  {"pedido": "manda mensagem no meu celular", "classe": "ferramenta"},
+  {"pedido": "compara a fundo os principais frameworks de agentes de IA", "classe": "pesquisa"},
+  {"pedido": "instala as dependências, roda os testes e depois publica a versão", "classe": "multietapas"},
+  {"pedido": "revisa o código do repositório do CRM", "classe": "delegacao"},
+  {"pedido": "vale a pena trocar o roteador ou comprar um repetidor?", "classe": "decisao"}
+ ]
+}

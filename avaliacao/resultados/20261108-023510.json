@@ -1,0 +1,49 @@
+{
+ "quando": "2026-11-08T02:35:07",
+ "casos": 66,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 10984,
+   "ferramentas_medio": 127
+  },
+  "selecao": {
+   "inclusao": 1.0,
+   "mrr": 0.884,
+   "tokens_medio": 1090,
+   "ferramentas_medio": 11.9,
+   "ms_medio": 1.1,
+   "falhas": []
+  },
+  "segundos": 0.18
+ },
+ "intencao": {
+  "acuracia": 0.917,
+  "erros": [
+   {
+    "pedido": "qual a diferença entre TCP e UDP?",
+    "esperado": "factual",
+    "obtido": "decisao"
+   }
+  ],
+  "segundos": 0.0
+ },
+ "recuperacao": {
+  "recall@5": 1.0,
+  "mrr": 0.917,
+  "latencia_ms_p50": 19,
+  "vetores": false,
+  "falhas": [],
+  "segundos": 2.65
+ },
+ "seguranca": {
+  "acerto": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ },
+ "planejamento": {
+  "acerto": 1.0,
+  "segundos": 0.0
+ }
+}

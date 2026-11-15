@@ -1,0 +1,32 @@
+{
+ "_nota": "TESTE FINAL: escrito depois de todos os ajustes; rodar uma vez e reportar como saiu (--teste).",
+ "ferramentas": [
+  {"pedido": "tá fazendo quantos graus lá fora?", "aceitas": ["clima"]},
+  {"pedido": "escreve no meu telegram: comprar pão", "aceitas": ["mandar_mensagem_celular", "notificar"]},
+  {"pedido": "reinicia o computador do quarto", "aceitas": ["desligar_computador"]},
+  {"pedido": "pula essa música", "aceitas": ["midia"]},
+  {"pedido": "aumenta o brilho da tela", "aceitas": ["brilho"]},
+  {"pedido": "tenho alguma coisa marcada sexta?", "aceitas": ["ver_agenda"]},
+  {"pedido": "quanto está usando de processador o pc dos jogos?", "aceitas": ["status_computador", "recursos_maquinas"]},
+  {"pedido": "esquece o que eu te falei sobre a senha do wifi", "aceitas": ["esquecer", "pedir_exclusao_memoria"]},
+  {"pedido": "busca na web notícias sobre o Gemini 4", "aceitas": ["pesquisar_web"]},
+  {"pedido": "lê esse site e resume: https://exemplo.com", "aceitas": ["ler_pagina"]},
+  {"pedido": "manda um email pra mim com o resumo do dia", "aceitas": ["me_enviar_email", "enviar_email"]},
+  {"pedido": "qual a carga da minha máquina agora?", "aceitas": ["status_deste_pc", "recursos_maquinas"]},
+  {"pedido": "documenta o projeto do CRM", "aceitas": ["documentar_projeto"]},
+  {"pedido": "faz um relatório do que eu fiz essa semana", "aceitas": ["gerar_relatorio", "linha_do_tempo"]},
+  {"pedido": "testa se o roteador responde", "aceitas": ["ping"]}
+ ],
+ "intencao": [
+  {"pedido": "valeu, Ultron", "classe": "conversa"},
+  {"pedido": "o que significa entropia?", "classe": "factual"},
+  {"pedido": "quem foi Clausewitz?", "classe": "factual"},
+  {"pedido": "você sabe qual é meu notebook?", "classe": "memoria"},
+  {"pedido": "pausa o spotify", "classe": "ferramenta"},
+  {"pedido": "pesquisa aprofundada sobre baterias de estado sólido", "classe": "pesquisa"},
+  {"pedido": "cria o banco, importa os dados e depois gera os gráficos", "classe": "multietapas"},
+  {"pedido": "refatora a função de login e escreve testes", "classe": "delegacao"},
+  {"pedido": "devo usar Docker ou instalar direto no servidor?", "classe": "decisao"},
+  {"pedido": "liga o ar condicionado", "classe": "ferramenta"}
+ ]
+}

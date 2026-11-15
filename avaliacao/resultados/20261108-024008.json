@@ -1,0 +1,53 @@
+{
+ "quando": "2026-11-08T02:40:05",
+ "casos": 66,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 11098,
+   "ferramentas_medio": 128
+  },
+  "selecao": {
+   "inclusao": 0.64,
+   "mrr": 0.62,
+   "tokens_medio": 851,
+   "ferramentas_medio": 9.0,
+   "ms_medio": 2.0,
+   "falhas": [
+    "liga o computador de mesa",
+    "quais aparelhos estão conectados na rede de casa?",
+    "pausa a música",
+    "me lembra de tomar remédio às 22h",
+    "o que tenho na agenda amanhã?",
+    "ativa o modo dormir",
+    "acende a luz da sala",
+    "cadê meu celular? faz ele tocar",
+    "simula quanto vou gastar de energia por mês se deixar o desktop ligado"
+   ]
+  },
+  "segundos": 0.2
+ },
+ "intencao": {
+  "acuracia": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ },
+ "recuperacao": {
+  "recall@5": 1.0,
+  "mrr": 0.917,
+  "latencia_ms_p50": 19,
+  "vetores": false,
+  "falhas": [],
+  "segundos": 2.75
+ },
+ "seguranca": {
+  "acerto": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ },
+ "planejamento": {
+  "acerto": 1.0,
+  "segundos": 0.0
+ }
+}

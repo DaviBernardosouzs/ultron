@@ -1,0 +1,26 @@
+{
+ "quando": "2026-11-08T03:06:48",
+ "casos": 25,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 11817,
+   "ferramentas_medio": 137
+  },
+  "selecao": {
+   "inclusao": 1.0,
+   "mrr": 0.759,
+   "tokens_medio": 1884,
+   "ferramentas_medio": 20.5,
+   "ms_medio": 2.1,
+   "falhas": []
+  },
+  "segundos": 0.19
+ },
+ "intencao": {
+  "acuracia": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ }
+}

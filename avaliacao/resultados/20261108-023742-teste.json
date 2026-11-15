@@ -1,0 +1,29 @@
+{
+ "quando": "2026-11-08T02:37:42",
+ "casos": 25,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 10984,
+   "ferramentas_medio": 127
+  },
+  "selecao": {
+   "inclusao": 0.867,
+   "mrr": 0.527,
+   "tokens_medio": 1604,
+   "ferramentas_medio": 17.9,
+   "ms_medio": 1.7,
+   "falhas": [
+    "lê esse site e resume: https://exemplo.com",
+    "testa se o roteador responde"
+   ]
+  },
+  "segundos": 0.17
+ },
+ "intencao": {
+  "acuracia": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ }
+}

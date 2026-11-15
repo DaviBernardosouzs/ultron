@@ -1,0 +1,28 @@
+{
+ "quando": "2026-11-08T03:06:49",
+ "casos": 25,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 11817,
+   "ferramentas_medio": 137
+  },
+  "selecao": {
+   "inclusao": 0.933,
+   "mrr": 0.561,
+   "tokens_medio": 1821,
+   "ferramentas_medio": 20.1,
+   "ms_medio": 2.3,
+   "falhas": [
+    "testa se o roteador responde"
+   ]
+  },
+  "segundos": 0.19
+ },
+ "intencao": {
+  "acuracia": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ }
+}

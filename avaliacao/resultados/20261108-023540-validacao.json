@@ -1,0 +1,39 @@
+{
+ "quando": "2026-11-08T02:35:40",
+ "casos": 25,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 10984,
+   "ferramentas_medio": 127
+  },
+  "selecao": {
+   "inclusao": 0.933,
+   "mrr": 0.757,
+   "tokens_medio": 1125,
+   "ferramentas_medio": 12.5,
+   "ms_medio": 1.7,
+   "falhas": [
+    "marca dentista quinta às 15h"
+   ]
+  },
+  "segundos": 0.17
+ },
+ "intencao": {
+  "acuracia": 0.8,
+  "erros": [
+   {
+    "pedido": "como funciona o DNS?",
+    "esperado": "factual",
+    "obtido": "ferramenta"
+   },
+   {
+    "pedido": "compara a fundo os principais frameworks de agentes de IA",
+    "esperado": "pesquisa",
+    "obtido": "ferramenta"
+   }
+  ],
+  "segundos": 0.0
+ }
+}

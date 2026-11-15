@@ -1,0 +1,35 @@
+{
+ "quando": "2026-11-08T02:34:06",
+ "casos": 66,
+ "ferramentas": {
+  "todas": {
+   "inclusao": 1.0,
+   "mrr": null,
+   "tokens_medio": 10984,
+   "ferramentas_medio": 127
+  },
+  "segundos": 0.14
+ },
+ "intencao": {
+  "acuracia": null,
+  "nota": "não existe classificador (linha de base)",
+  "segundos": 0.0
+ },
+ "recuperacao": {
+  "recall@5": 1.0,
+  "mrr": 0.917,
+  "latencia_ms_p50": 19,
+  "vetores": false,
+  "falhas": [],
+  "segundos": 2.86
+ },
+ "seguranca": {
+  "acerto": 1.0,
+  "erros": [],
+  "segundos": 0.0
+ },
+ "planejamento": {
+  "acerto": 1.0,
+  "segundos": 0.0
+ }
+}
