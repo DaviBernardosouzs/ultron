@@ -1,0 +1,170 @@
+# Plugins MCP do Ultron. Cada um só inicia quando é usado.
+# "requer": variáveis que precisam existir no .env para o plugin ficar pronto.
+# "nivel": N1 (sem confirmação) | N2 (confirma, aceita "sempre") | N3 (confirma sempre).
+#          Sem "nivel", usa as anotações do servidor (somente leitura -> N1; destrutiva -> N3; resto -> N2).
+# "niveis": nível por ferramenta, para ajustes finos.
+
+# ---------------------------------------------------------------- sem chave, prontos
+filesystem:
+  descricao: Ler, escrever e organizar arquivos e pastas no notebook (pasta pessoal).
+  comando: npx
+  args: [-y, "@modelcontextprotocol/server-filesystem", "~"]
+  niveis: {read_file: N1, read_text_file: N1, read_multiple_files: N1, list_directory: N1,
+           list_directory_with_sizes: N1, directory_tree: N1, search_files: N1,
+           get_file_info: N1, list_allowed_directories: N1}
+
+git:
+  descricao: Status, diff, log, commits e branches de repositórios Git locais.
+  comando: uvx
+  args: [mcp-server-git]
+  niveis: {git_status: N1, git_diff_unstaged: N1, git_diff_staged: N1, git_diff: N1,
+           git_log: N1, git_show: N1, git_branch: N1}
+
+memory:
+  descricao: Grafo de conhecimento persistente (entidades e relações) para anotações estruturadas.
+  comando: npx
+  args: [-y, "@modelcontextprotocol/server-memory"]
+  env: {MEMORY_FILE_PATH: "~/ultron/dados/mcp-memory.jsonl"}
+  nivel: N1
+
+sequential-thinking:
+  descricao: Raciocínio passo a passo para problemas complexos e planejamento.
+  comando: npx
+  args: [-y, "@modelcontextprotocol/server-sequential-thinking"]
+  nivel: N1
+
+playwright:
+  descricao: Controla um navegador de verdade (abrir sites, clicar, preencher, ler páginas, prints).
+  comando: npx
+  args: [-y, "@playwright/mcp@latest", "--headless"]   # tire --headless para ver o navegador
+
+context7:
+  descricao: Documentação atualizada de bibliotecas e frameworks de programação.
+  comando: npx
+  args: [-y, "@upstash/context7-mcp"]
+  nivel: N1
+
+arxiv:
+  descricao: Busca, baixa e lê artigos científicos do arXiv.
+  comando: uvx
+  args: [arxiv-mcp-server, --storage-path, "~/ultron/dados/arxiv"]
+  nivel: N1
+
+pc-windows:
+  descricao: "Opera o PC Windows (shaco-pc): comandos PowerShell, ler/editar arquivos, buscar
+    no código e ABRIR PROGRAMAS NA TELA (open_app: navegador, Spotify, jogos...)."
+  comando: ssh
+  args: [-T, -o, BatchMode=yes, -o, ServerAliveInterval=30, shaco-pc,
+         'C:\Users\davib\ultron\.venv\Scripts\python.exe', 'C:\Users\davib\ultron\pc_mcp_server.py']
+  niveis: {read_file: N1, list_dir: N1, grep: N1, open_app: N2,
+           run_command: N3, write_file: N3, edit_file: N3}
+
+# ---------------------------------------------------------------- precisam de chave/conta
+github:
+  descricao: Repositórios, issues, pull requests, código e Actions do GitHub.
+  url: https://api.githubcopilot.com/mcp/
+  cabecalhos: {Authorization: "Bearer ${GITHUB_TOKEN}"}
+  requer: [GITHUB_TOKEN]
+
+postgres:
+  descricao: Consultas e análise de bancos PostgreSQL (modo somente leitura).
+  comando: uvx
+  args: [postgres-mcp, --access-mode=restricted]
+  env: {DATABASE_URI: "${POSTGRES_URL}"}
+  requer: [POSTGRES_URL]
+
+obsidian:
+  descricao: Ler, buscar e editar notas do cofre do Obsidian (plugin Local REST API).
+  comando: uvx
+  args: [mcp-obsidian]
+  env: {OBSIDIAN_API_KEY: "${OBSIDIAN_API_KEY}", OBSIDIAN_HOST: "127.0.0.1"}
+  requer: [OBSIDIAN_API_KEY]
+
+sentry:
+  descricao: Erros, issues e performance dos projetos no Sentry.
+  comando: npx
+  args: [-y, "@sentry/mcp-server"]
+  env: {SENTRY_ACCESS_TOKEN: "${SENTRY_ACCESS_TOKEN}"}
+  requer: [SENTRY_ACCESS_TOKEN]
+
+google:
+  descricao: Gmail, Google Calendar, Google Docs, Slides, Sheets e Drive (uma conta Google).
+  comando: uvx
+  args: [workspace-mcp, --tools, gmail, calendar, docs, slides, sheets, drive]
+  env:
+    GOOGLE_OAUTH_CLIENT_ID: "${GOOGLE_OAUTH_CLIENT_ID}"
+    GOOGLE_OAUTH_CLIENT_SECRET: "${GOOGLE_OAUTH_CLIENT_SECRET}"
+    USER_GOOGLE_EMAIL: "${GOOGLE_EMAIL}"
+    OAUTHLIB_INSECURE_TRANSPORT: "1"
+  requer: [GOOGLE_OAUTH_CLIENT_ID, GOOGLE_OAUTH_CLIENT_SECRET, GOOGLE_EMAIL]
+
+todoist:
+  descricao: Tarefas, projetos e prazos no Todoist.
+  comando: npx
+  args: [-y, "@doist/todoist-mcp"]
+  env: {TODOIST_API_KEY: "${TODOIST_API_KEY}"}
+  requer: [TODOIST_API_KEY]
+
+notion:
+  descricao: Páginas, bancos de dados e busca no Notion.
+  comando: npx
+  args: [-y, "@notionhq/notion-mcp-server"]
+  env: {NOTION_TOKEN: "${NOTION_TOKEN}"}
+  requer: [NOTION_TOKEN]
+
+trello:
+  descricao: Quadros, listas e cartões do Trello.
+  comando: npx
+  args: [-y, "@delorenj/mcp-server-trello"]
+  env: {TRELLO_API_KEY: "${TRELLO_API_KEY}", TRELLO_TOKEN: "${TRELLO_TOKEN}"}
+  requer: [TRELLO_API_KEY, TRELLO_TOKEN]
+
+linear:
+  descricao: Issues, projetos e ciclos no Linear.
+  url: https://mcp.linear.app/mcp
+  cabecalhos: {Authorization: "Bearer ${LINEAR_API_KEY}"}
+  requer: [LINEAR_API_KEY]
+
+brave-search:
+  descricao: Busca na web pelo Brave Search.
+  comando: npx
+  args: [-y, "@brave/brave-search-mcp-server"]
+  env: {BRAVE_API_KEY: "${BRAVE_API_KEY}"}
+  requer: [BRAVE_API_KEY]
+  nivel: N1
+
+tavily:
+  descricao: Busca na web e extração de conteúdo otimizadas para IA (Tavily).
+  comando: npx
+  args: [-y, tavily-mcp]
+  env: {TAVILY_API_KEY: "${TAVILY_API_KEY}"}
+  requer: [TAVILY_API_KEY]
+  nivel: N1
+
+firecrawl:
+  descricao: Raspagem e rastreamento de sites, convertendo páginas em texto limpo.
+  comando: npx
+  args: [-y, firecrawl-mcp]
+  env: {FIRECRAWL_API_KEY: "${FIRECRAWL_API_KEY}"}
+  requer: [FIRECRAWL_API_KEY]
+  nivel: N1
+
+qdrant:
+  descricao: Banco vetorial Qdrant para guardar e buscar memórias por significado.
+  comando: uvx
+  args: [mcp-server-qdrant]
+  env: {QDRANT_URL: "${QDRANT_URL}", COLLECTION_NAME: ultron,
+        EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"}
+  requer: [QDRANT_URL]
+
+home-assistant:
+  descricao: Casa inteligente pelo servidor MCP nativo do Home Assistant.
+  url: "${HOME_ASSISTANT_URL}/api/mcp"
+  cabecalhos: {Authorization: "Bearer ${HOME_ASSISTANT_TOKEN}"}
+  requer: [HOME_ASSISTANT_URL, HOME_ASSISTANT_TOKEN]
+
+windows:
+  descricao: Controla a interface do PC Windows (clicar, digitar, abrir apps, ler a tela).
+  url: http://192.168.1.103:8000/mcp
+  requer: [WINDOWS_MCP_ATIVO]
+  nivel: N2
